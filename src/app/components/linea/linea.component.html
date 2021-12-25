@@ -1,0 +1,27 @@
+<div class="flex">
+  <div class="flex-item">
+    <div style="display: block;">
+    <canvas baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+</div>
+
+<ion-item>
+  <ion-avatar slot="start">
+    <img src="assets/img/temperature.png">
+  </ion-avatar>
+  <ion-label>
+    <h2>Last measurement</h2>
+    <h3 id="cont2">a</h3>
+    <p id="cont1">2020-12-01</p>
+  </ion-label>
+</ion-item>

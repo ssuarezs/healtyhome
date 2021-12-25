@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+    <ion-button (click)="back()">
+      <ion-icon  name="chevron-back-outline" style="zoom:2.0"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title big-heading>Sensor data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+  <!--<app-bpm></app-bpm>-->
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Temperature (°C)</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <app-line-chart [machineID]="machineID"></app-line-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Heartbeat (bpm)</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <app-bpm [machineID]="machineID"></app-bpm>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Oxygen saturation (%)</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <app-oxigeno [machineID]="machineID"></app-oxigeno>
+    </ion-card-content>
+  </ion-card>
+
+  </div>
+  
+</ion-content>

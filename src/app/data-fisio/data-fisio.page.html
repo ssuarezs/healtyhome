@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon  name="chevron-back-outline" style="zoom:2.0"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title big-heading>Physiotherapy</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div>
+  <!--<app-linea></app-linea>-->
+  <app-fisline-chart></app-fisline-chart>
+  </div>
+  <ion-toolbar >
+    <ion-title big-heading> Data Table</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="searchChanged($event)">
+        <ion-icon  name="apps-outline" style="zoom:2.0"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+</ion-toolbar>
+  
+ <ion-content padding class="tab5-content">
+  <ion-grid >
+    <ion-row>
+      <ion-col col-auto class="cell-class"> <div>
+          <h3>Time</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class" style="margin-left : -1px"> <div>
+          <h3>Move</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class" style="margin-left : -1px"> <div>
+          <h3>GX</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class" style="margin-left : -1px"> <div>
+          <h3>GY</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class" style="margin-left : -1px"> <div>
+          <h3>GZ</h3>
+        </div>  </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of (results | async)" [routerLink]="['/', 'user_id', item.user_id]">
+      <ion-col col-auto class="cell-class2"> <div>
+          <h3>{{ item.fecha.slice(0,10) }}</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class2" style="margin-left : -1px"> <div>
+          <h3>{{ item.mag_acel }}</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class2" style="margin-left : -1px"> <div>
+          <h3>{{ item.gi_x }}</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class2" style="margin-left : -1px"> <div>
+          <h3>{{ item.gi_y }}</h3>
+        </div>  </ion-col>
+      <ion-col col-auto class="cell-class2" style="margin-left : -1px"> <div>
+          <h3>{{ item.gi_z }}</h3>
+        </div>  </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+</ion-content>
+

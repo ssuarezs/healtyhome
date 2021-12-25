@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon  name="chevron-back-outline" style="zoom:2.0"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title big-heading>Prescriptions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br>
+  <table align="center">
+		<!--<caption>Titulo de la tabla</caption>-->
+		<tr>
+			<th class="headerTable"><h4>Medicine</h4></th>
+      <th class="headerTable"><h4>Dose</h4></th>
+      <th class="headerTable"><h4>Duration</h4></th>
+      <th class="headerTable"><h4>Date</h4></th>
+		</tr>
+		<tr *ngFor="let item of (results | async)" [routerLink]="['/', 'patient_id', item.patient_id]">
+			<td class="headerItem1"><h5>{{ item.medicine }}</h5></td>
+      <td class="headerItem2"><h5>{{ item.dose }}</h5></td>
+      <td class="headerItem1"><h5>{{ item.duration }}</h5></td>
+      <td class="headerItem2"><h5>{{ item.updated_at.slice(0,10) }}</h5></td>
+		</tr>
+	</table>
+ 
+</ion-content>
